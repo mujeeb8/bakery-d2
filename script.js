@@ -23,7 +23,7 @@ document.querySelector("#spin").addEventListener("click", () => {
     { duration: 350 },
   );
   setTimeout(() => {
-    heroCake.src = `../assets/${cakes[cakeIndex]}`;
+    heroCake.src = `assets/${cakes[cakeIndex]}`;
     heroCake.animate(
       [
         { transform: "rotate(-360deg) scale(0)" },
@@ -35,11 +35,11 @@ document.querySelector("#spin").addEventListener("click", () => {
 });
 document.body.insertAdjacentHTML(
   "beforeend",
-  `<section class="flavour-bar"><p>LA COLECCIÓN COMPLETA — TOCA UN PASTEL PARA HACERLO LA ESTRELLA</p><div class="cake-gallery">${cakes.map((image, i) => `<button data-image="${image}"><img src="../assets/${image}" alt="Pastel de Dayi's Sweet ${i + 1}"></button>`).join("")}</div></section><dialog><button class="close">×</button><b>¿LISTA PARA CELEBRAR?</b><p>Nos encantará hacer tu ocasión aún más dulce en Miami.</p><a href="https://www.instagram.com/cakes_bydayi/" target="_blank">ORDENA POR INSTAGRAM ↗</a></dialog>`,
+  `<section class="flavour-bar"><p>LA COLECCIÓN COMPLETA — TOCA UN PASTEL PARA HACERLO LA ESTRELLA</p><div class="cake-gallery">${cakes.map((image, i) => `<button data-image="${image}"><img src="assets/${image}" alt="Pastel de Dayi's Sweet ${i + 1}"></button>`).join("")}</div></section><dialog><button class="close">×</button><b>¿LISTA PARA CELEBRAR?</b><p>Nos encantará hacer tu ocasión aún más dulce en Miami.</p><a href="https://www.instagram.com/cakes_bydayi/" target="_blank">ORDENA POR INSTAGRAM ↗</a></dialog>`,
 );
 document.querySelectorAll(".cake-gallery button").forEach((button) =>
   button.addEventListener("click", () => {
-    heroCake.src = `../assets/${button.dataset.image}`;
+    heroCake.src = `assets/${button.dataset.image}`;
     window.scrollTo({ top: 0, behavior: "smooth" });
   }),
 );
